@@ -54,7 +54,13 @@ def print_results(analyzed_data):
 
 def user_input():
   user_input = input('Please enter number of games to analyze: ')
-  user_input = int(user_input)
+  while True:
+    try:
+      user_input = int(user_input)
+      break
+    except ValueError:
+      user_input = input('Input was not an integer, please try again: ')
+  
   return user_input
 
 def start_analysis(number_of_games):
